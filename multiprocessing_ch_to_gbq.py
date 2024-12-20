@@ -513,7 +513,7 @@ if __name__ == "__main__":
     with open(f'{path_server_configs}proxies.json', 'r') as f:
         proxies = json.load(f)
 
-    path_server = '/data/airflow/dags/ch_to_gbq_core_events/'
+    path_server = '/data/airflow/dags/ch_to_gbq_events/'
 
     credentials = service_account.Credentials.from_service_account_file(f'{path_server}gbq.json') #креды BQ
     project_id = 'project'
