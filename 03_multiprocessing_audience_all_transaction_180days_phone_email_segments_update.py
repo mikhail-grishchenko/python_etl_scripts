@@ -101,7 +101,6 @@ def load_data(start_date, end_date, queue):
             if counter.value >= num_processes:
                 finished.release()
     
-
 # Функция для разделения периода на дни и создания запросов
 def create_queries(start_date, end_date, num_processes):
     delta = (end_date - start_date) / num_processes
@@ -113,9 +112,7 @@ def create_queries(start_date, end_date, num_processes):
     return queries
 
 
-
-
-# ОТПРАВКА ТРАНЗАКЦИЙ 
+# ОТПРАВКА ДАННЫХ
 def process_and_send_data(filtered_df):
     #ОБРАБОТКА
     # Получение размера датафрейма в байтах
@@ -147,8 +144,6 @@ def process_and_send_data(filtered_df):
     print(f"Размер CSV-строки для phone_email: {size_gb_phone_email:.2f} GB")
 
 
-
-    # ОТПРАВКА
     segments_id = ['__', '__', '__', '__']
 
     # Разделение датафрейма на 4 равные части
