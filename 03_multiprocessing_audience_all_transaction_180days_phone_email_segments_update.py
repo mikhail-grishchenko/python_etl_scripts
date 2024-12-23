@@ -189,16 +189,6 @@ def process_and_send_data(filtered_df):
         response_change = requests.post(url_change, files={'file': ('data.csv', csv_string_chunk.encode('utf-8'), 'text/csv; charset=utf-8')}, params=params_change, headers=headers_change) 
         print(response_change.text + '\n')
 
-    
-    try:
-        del filtered_df_phone_email
-        del csv_string_phone_email
-        del chunk_df
-        del csv_string_chunk
-        gc.collect()
-    except Exception as ex:
-        print(ex)
-
 
 if __name__ == "__main__":
     # Глобальный счетчик для отслеживания успешно завершенных процессов
